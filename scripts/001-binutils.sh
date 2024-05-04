@@ -72,8 +72,8 @@ for TARGET in "dvp"; do
     $TARG_XTRA_OPTS
 
   ## Compile and install.
-  make --quiet -j "$PROC_NR"
-  make --quiet -j "$PROC_NR" install-strip
+  make --quiet -j "$PROC_NR" CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
+  make --quiet -j "$PROC_NR" install
   make --quiet -j "$PROC_NR" clean
 
   ## Exit the build directory.
